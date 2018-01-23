@@ -1,16 +1,52 @@
 <html>
 <body>
 
-<h1>Edit Menu Item Name</h1>
+<h1>Edit {{i.name}}</h1>
 
-<form action ="#" method="post">
+<form action ="url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=menu_id, editItem=i)" method="post">
 
-<p>Name: </p>
-<input type="text" size="30" name="name" placeholder="Menu Item Name">
+<p>Item Name:<br>
+<input type="text" size="30" name="name" placeholder="editItem.name"></p>
+                                        
+<p>Item Description:<br>
+<input type="text" size="60" name="description"  placeholder="editItem.description"></p>
+                                               
+<p>Item Price:<br>
+<input type="text" size="10" name="price"  placeholder="editItem.price"></p>  
+                                         
+<p>Item Course:<br>
+{% if {{editItem.course}} == "appetizer" %}
+<form>
+<input type="radio" name="course" value="appetizer" checked>Appetizer<br>
+<input type="radio" name="course" value="entree">Entree<br>
+<input type="radio" name="course" value="dessert">Dessert</p>
+</form>
+ 
+{% else if {{editItem.course}} == "entree" %}
+<form>
+<input type="radio" name="course" value="appetizer">Appetizer<br>
+<input type="radio" name="course" value="entree" checked>Entree<br>
+<input type="radio" name="course" value="dessert">Dessert</p>
+</form>
 
+{% else if {{editItem.course}} == "dessert" %}
+<form>
+<input type="radio" name="course" value="appetizer">Appetizer<br>
+<input type="radio" name="course" value="entree">Entree<br>
+<input type="radio" name="course" value="dessert" checked>Dessert</p>
+</form>
+
+{% else %}
+<form>
+<input type="radio" name="course" value="appetizer">Appetizer<br>
+<input type="radio" name="course" value="entree">Entree<br>
+<input type="radio" name="course" value="dessert">Dessert</p>
+</form>
+
+{% endif %}
 <input type="submit" value="Edit">
 
-<a href = '#'> Cancel </a>
+<a href = 'url_for('showMenu', restaurant_id=restaurant_id)'> Cancel </a>
 </form>
 </body>
 </html>
