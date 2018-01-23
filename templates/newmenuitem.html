@@ -5,17 +5,19 @@
 
 <form action ="url_for('newMenuItem', restaurant_id=restaurant_id) method="post">
 
-<p>Item Name: </p>
-<input type="text" size="30" name="name">
-  
-<p>Item Description: </p>
-<input type="text" size="60" name="description">
-  
-<p>Item Price: </p>
-<input type="text" size="10" name="price">
-  
-<p>Item Course: </p>
-<input type="text" size="30" name="course">
+<p>Item Name:<br>
+<input type="text" size="30" name="name"></p>
+                                        
+<p>Item Description:<br>
+<input type="text" size="60" name="description"></p>
+                                               
+<p>Item Price:<br>
+<input type="text" size="10" name="price"></p>  
+                                         
+<p>Item Course:<br>
+<input type="radio" name="course" value="appetizer" checked>Appetizer<br>
+<input type="radio" name="course" value="entree">Entree<br>
+<input type="radio" name="course" value="dessert">Dessert</p>
 
 <input type="submit" value="Create">
 
