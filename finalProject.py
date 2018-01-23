@@ -52,7 +52,7 @@ def deleteRestaurant(restaurant_id):
         #INSERT FLASH HERE
         return redirect(url_for('showRestaurants'))
     else:
-        return render_template('deleterestaurant.html', restaurant_id=restaurant_id)
+        return render_template('deleterestaurant.html', restaurant_id=restaurant_id, i=restaurant)
 
 @app.route('/restaurant/<int:restaurant_id>/', methods = ['GET'])
 @app.route('/restaurant/<int:restaurant_id>/menu/', methods = ['GET'])
