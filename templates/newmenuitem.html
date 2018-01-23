@@ -3,14 +3,23 @@
 
 <h1>New Menu Item</h1>
 
-<form action ="#" method="post">
+<form action ="url_for('newMenuItem', restaurant_id=restaurant_id) method="post">
 
 <p>Item Name: </p>
 <input type="text" size="30" name="name">
+  
+<p>Item Description: </p>
+<input type="text" size="60" name="description">
+  
+<p>Item Price: </p>
+<input type="text" size="10" name="price">
+  
+<p>Item Course: </p>
+<input type="text" size="30" name="course">
 
 <input type="submit" value="Create">
 
-<a href = '#'> Cancel </a>
+<a href = "url_for('showMenu', restaurant_id=restaurant_jd)"> Cancel </a>
 </form>
 </body>
 </html>
