@@ -1,17 +1,17 @@
 <html>
 <body>
 
-<h1>Edit {{i.name}}</h1>
+<h1>Edit Restaurant - {{i.name}}</h1>
 
-<form action ="url_for('editRestaurant', restaurant_id=restaurant_id, restaurant = i)" method="post">
+<form action ="{{url_for('editRestaurant', restaurant_id=restaurant_id, i = i)}}" method="post">
 
 <p>Name:<br>
-<input type="text" size="30" name="name" placeholder="{{restaurant.name}}"></p>
+<input type="text" size="30" name="name" placeholder="{{i.name}}"></p>
 
 <input type="submit" value="Edit">
+<a href = "{{url_for('showRestaurants')}}"> Cancel </a>
+
 </form>
   
-<a href = "url_for('showRestaurants')"> Cancel </a>
-
 </body>
 </html>
