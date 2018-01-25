@@ -1,9 +1,33 @@
+<html>
+
+<head>
+  <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}">
+</head>
+
+<body>
+
 <h1> Menu </h1>
+
+<div class = 'flash'>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li><strong>{{message}}</strong></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+</div>
+
 {% for item in items %}	
 <div>
-<h4>{{item.name}}</h4>
+<h4>{{item.id}}. {{item.name}}</h4>
 {{item.description}}<br>
 {{item.price}}<br>
 {{item.course}}<br>
 </div>
 {% endfor %}
+
+</body>
+</html>
